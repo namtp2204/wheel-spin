@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'spin/css/spin_form.css' %}">
+    <title>Form Input</title>
+</head>
+<body>
+    <div class="wrapper">
+        <form method="post"> <!-- Thêm thuộc tính method="post" để gửi dữ liệu -->
+            {% csrf_token %}
+            <h1>Liễu Phạm Authentic</h1>
+            <div class="input-box">
+                <!-- Sử dụng widget của Django để hiển thị trường code -->
+                {{ form.code }}
+            </div>
+
+            <button type="submit" class="btn">Submit</button>
+
+            <div class="register-link">
+                <p>Be beautiful your way</p>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
