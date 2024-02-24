@@ -10,11 +10,18 @@
 </head>
 <body>
     <div class="wrapper">
-        <form method="post"> <!-- Thêm thuộc tính method="post" để gửi dữ liệu -->
+        <form method="post"> <!-- Add method="post" attribute to send data -->
             {% csrf_token %}
             <h1>Liễu Phạm Authentic</h1>
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
             <div class="input-box">
-                <!-- Sử dụng widget của Django để hiển thị trường code -->
+                <!-- Use Django's widget to display the code field -->
                 {{ form.code }}
             </div>
 
