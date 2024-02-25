@@ -23,9 +23,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-gm0)zp(+18=cw)csg#nd6kh)=w(dq-3#tt7!w9wkanfr-z3+_c'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['spin-fl78z2dx.b4a.run', 'www.spin-fl78z2dx.b4a.run']
+
+CSRF_COOKIE_SECURE = True
+CSRF_COOKIE_HTTPONLY = True
 
 
 # Application definition
