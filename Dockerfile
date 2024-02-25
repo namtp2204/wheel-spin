@@ -10,14 +10,17 @@ WORKDIR /app
 # Copy tệp requirements.txt vào thư mục làm việc của container
 COPY requirements.txt /app
 
-# Cài đặt các phụ thuộc Python từ tệp requirements.txt
-RUN pip install -r requirements.txt
-
 # Copy toàn bộ mã nguồn của dự án vào thư mục làm việc của container
 COPY . /app
 
+# Cài đặt các phụ thuộc Python từ tệp requirements.txt
+RUN pip install -r requirements.txt
+
 # Chạy lệnh migrate để áp dụng các thay đổi cơ sở dữ liệu
 RUN python manage.py migrate
+
+# Chạy lệnh collectstatic để thu thập các tệp tĩnh
+RUN python manage.py collectstatic --noinput
 
 # Expose cổng 8000 để có thể truy cập vào ứng dụng Django
 EXPOSE 8000
