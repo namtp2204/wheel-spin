@@ -71,6 +71,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'lucky_spin.wsgi.application'
 
+# Set the CSRF_COOKIE_DOMAIN to your domain
+CSRF_COOKIE_DOMAIN = 'back4app.com'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
@@ -112,6 +114,7 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+
 
 
 # Static files (CSS, JavaScript, Images)
