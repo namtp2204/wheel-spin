@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-gm0)zp(+18=cw)csg#nd6kh)=w(dq-3#tt7!w9wkanfr-z3+_c
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://luckyspin-ugcugr2u.b4a.run/','luckyspin-ugcugr2u.b4a.run/']
+ALLOWED_HOSTS = ['spin-fl78z2dx.b4a.run', 'www.spin-fl78z2dx.b4a.run']
 
 
 # Application definition
