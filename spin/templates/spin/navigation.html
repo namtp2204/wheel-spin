@@ -14,8 +14,8 @@
             <nav>
                 <ul>
                     <li><a href="{% url 'spin:spin_form' %}" target="_blank">Search List</a></li>
-                    <li><a href="" target="_blank">Gen List</a></li>
-                    {% comment %} <li><a href="{% url 'search_data:genMultipleList' %}" target="_blank">Gen Multiple List</a></li> {% endcomment %}
+                    <li><a href="{% url 'spin:spin_wheel' %}"target="_blank">Gen List</a></li>
+                    <li><a href="{% url 'spin:show_spin_codes' %}" target="_blank">Gen Multiple List</a></li>
                     {% comment %} <li><a href="{% url 'search_data:parser_report' %}" target="_blank">Parser Report</a></li> {% endcomment %}
                 </ul>
             </nav>

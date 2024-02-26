@@ -23,11 +23,13 @@ def spin_form(request):
         form = SpinCodeForm()
     return render(request, 'spin/spin_form.html', {'form': form})
 
-def spin_wheel(request, spin_code):
+def spin_wheel(request):
     # Xử lý logic của trang spin_wheel ở đây
-    return render(request, 'spin/spin_wheel.html', {'spin_code': spin_code})
+    return render(request, 'spin/spin_wheel.html')
 
-
+def show_spin_codes(request):
+    spin_codes = SpinCode.objects.all()
+    return render(request, 'spin/show_spin_codes.html', {'spin_codes': spin_codes})
 
 def navigation(request):
 
