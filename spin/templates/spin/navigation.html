@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Navigation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'spin/css/navigation_style.css' %}">
+    </head>
+    <body>
+        <div class="CONTAINER">
+            <nav>
+                <ul>
+                    <li><a href="{% url 'spin:spin_form' %}" target="_blank">Search List</a></li>
+                    <li><a href="" target="_blank">Gen List</a></li>
+                    {% comment %} <li><a href="{% url 'search_data:genMultipleList' %}" target="_blank">Gen Multiple List</a></li> {% endcomment %}
+                    {% comment %} <li><a href="{% url 'search_data:parser_report' %}" target="_blank">Parser Report</a></li> {% endcomment %}
+                </ul>
+            </nav>
+        </div>
+    </body>
+</html>
+  

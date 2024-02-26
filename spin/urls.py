@@ -1,8 +1,10 @@
-
 from django.urls import path
-from .views import spin_form
+from . import views
+
+app_name = 'spin'
 
 urlpatterns = [
-    path('spin-form/', spin_form, name='spin-form'),
+    path("", views.navigation, name="navigation"),
+    path('spin_form/', views.spin_form, name='spin_form'),
     
 ]

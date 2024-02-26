@@ -20,3 +20,8 @@ def spin_form(request):
     else:
         form = SpinCodeForm()
     return render(request, 'spin/spin_form.html', {'form': form})
+
+
+def navigation(request):
+
+    return render(request, 'spin/navigation.html')
