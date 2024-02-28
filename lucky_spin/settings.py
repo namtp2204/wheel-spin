@@ -51,7 +51,11 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-
+CSRF_TRUSTED_ORIGINS = [
+    'https://spin-fl78z2dx.b4a.run',
+    'https://*.mydomain.com',
+    'https://*.127.0.0.1'
+]
 
 ROOT_URLCONF = 'lucky_spin.urls'
 
