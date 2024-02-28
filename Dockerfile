@@ -24,6 +24,9 @@ RUN python manage.py migrate
 # Chạy lệnh collectstatic để thu thập các tệp tĩnh
 RUN python manage.py collectstatic --noinput
 
+# Clear cache
+RUN rm -rf /root/.cache
+
 # Expose cổng 8000 để có thể truy cập vào ứng dụng Django
 EXPOSE 8000
 
