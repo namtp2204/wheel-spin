@@ -1,5 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Spin Wheel</title>
@@ -18,14 +19,18 @@
             <div class="number" style="--i:7;--clr:#3cb371;"><span>Voucher 30k</span></div>
             <div class="number" style="--i:8;--clr:#4169e1;"><span>Freeship</span></div>
         </div>
+        <div id="message" style="display: none;">Cảm ơn bạn đã đồng hành cùng Liễu Phạm</div>
     </div>
     <script>
         let wheel = document.querySelector('.wheel');
         let spinBtn = document.querySelector('.spinBtn');
+        let message = document.getElementById('message'); // Lấy phần tử thông báo
         let value = Math.ceil(Math.random() * 3600);
         let spinCode = '{{ spin_code }}'; // Lấy spin_code từ template
         let gameStateKey = 'gameState_' + spinCode;
         let gameState = sessionStorage.getItem(gameStateKey) === 'true';
+        console.log('gameState:', gameState);
+
 
         function spinWheel(spinCode) {
             if (!gameState) { // Nếu trò chơi chưa kết thúc
@@ -35,6 +40,9 @@
                 gameState = true; // Đặt trạng thái trò chơi thành đã bắt đầu
                 sessionStorage.setItem(gameStateKey, 'true'); // Lưu trạng thái vào sessionStorage
                 spinBtn.style.pointerEvents = 'none'; // Ngăn chặn người dùng quay lại sau khi đã quay
+                document.getElementById("message").style.display = "block";
+                console.log('gameState:', gameState);
+
             }
         }
     </script>
