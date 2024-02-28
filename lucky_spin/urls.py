@@ -19,5 +19,5 @@ from django.urls import path, include  # Thêm import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('spin/', include('spin.urls')),  # Đường dẫn ánh xạ tới ứng dụng spin
+    path('', include('spin.urls')),  # Đường dẫn ánh xạ tới ứng dụng spin
 ]

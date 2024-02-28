@@ -72,7 +72,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'lucky_spin.wsgi.application'
 
 # Set the CSRF_COOKIE_DOMAIN to your domain
-CSRF_COOKIE_DOMAIN = 'back4app.com'
+# CSRF_COOKIE_DOMAIN = 'back4app.com'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases

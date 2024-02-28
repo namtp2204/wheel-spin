@@ -14,8 +14,8 @@ def spin_form(request):
                 return render(request, 'spin/spin_form.html', {'form': form})
             elif SpinCode.objects.filter(code=spin_code).exists():
                 UsedSpinCode.objects.create(code=spin_code)
-                return redirect(reverse('spin:spin_wheel', kwargs={'spin_code': spin_code}))
-                # return render(request, 'spin/spin_wheel.html', {'spin_code': spin_code})
+                # return redirect(reverse('spin:spin_wheel', kwargs={'spin_code': spin_code}))
+                return redirect('spin_wheel', spin_code=spin_code)
             else:
                 messages.error(request, 'Spin code không hợp lệ')
                 return render(request, 'spin/spin_form.html', {'form': form})
@@ -23,14 +23,13 @@ def spin_form(request):
         form = SpinCodeForm()
     return render(request, 'spin/spin_form.html', {'form': form})
 
-def spin_wheel(request):
-    # Xử lý logic của trang spin_wheel ở đây
-    return render(request, 'spin/spin_wheel.html')
+def spin_wheel(request, spin_code):
+    return render(request, 'spin/spin_wheel.html', {'spin_code': spin_code})
 
-def show_spin_codes(request):
-    spin_codes = SpinCode.objects.all()
-    return render(request, 'spin/show_spin_codes.html', {'spin_codes': spin_codes})
+# def show_spin_codes(request):
+#     spin_codes = SpinCode.objects.all()
+#     return render(request, 'spin/show_spin_codes.html', {'spin_codes': spin_codes})
 
-def navigation(request):
+# def navigation(request):
 
-    return render(request, 'spin/navigation.html')
+#     return render(request, 'spin/navigation.html')
