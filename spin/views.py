@@ -16,7 +16,7 @@ def spin_form(request):
                 return render(request, 'spin/spin_form.html', {'form': form})
             elif SpinCode.objects.filter(code=spin_code).exists():
                 UsedSpinCode.objects.create(code=spin_code)
-                return redirect('spin_wheel', spin_code=spin_code)
+                return render(request,'spin/spin_wheel.html', {'spin_code':spin_code})
             else:
                 messages.error(request, 'Spin code không hợp lệ')
                 return render(request, 'spin/spin_form.html', {'form': form})
@@ -24,9 +24,9 @@ def spin_form(request):
         form = SpinCodeForm()
     return render(request, 'spin/spin_form.html', {'form': form})
 
-@csrf_protect
-def spin_wheel(request, spin_code):
-    return render(request, 'spin/spin_wheel.html', {'spin_code': spin_code})
+# @csrf_protect
+# def spin_wheel(request, spin_code):
+#     return render(request, 'spin/spin_wheel.html', {'spin_code': spin_code})
 
 # def show_spin_codes(request):
 #     spin_codes = SpinCode.objects.all()
