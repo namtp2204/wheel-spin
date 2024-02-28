@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-gm0)zp(+18=cw)csg#nd6kh)=w(dq-3#tt7!w9wkanfr-z3+_c
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = ['node130a.containers.back4app.com','spin-fl78z2dx.b4a.run', 'https://spin-fl78z2dx.b4a.run']
+ALLOWED_HOSTS = ['node130a.containers.back4app.com','spin-fl78z2dx.b4a.run', 'https://spin-fl78z2dx.b4a.run','127.0.0.1']
 
 
 
@@ -51,6 +51,12 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://spin-fl78z2dx.b4a.run',
+    'https://*.mydomain.com',
+    'https://*.127.0.0.1'
+]
+
 ROOT_URLCONF = 'lucky_spin.urls'
 
 TEMPLATES = [
@@ -70,6 +76,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'lucky_spin.wsgi.application'
+
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases

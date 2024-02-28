@@ -8,7 +8,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **kwargs):
         number_of_codes = 100  # Số lượng spin codes bạn muốn tạo
-
+    
         # Xóa tất cả các spin codes cũ trước khi tạo mới (nếu cần)
         SpinCode.objects.all().delete()
 
