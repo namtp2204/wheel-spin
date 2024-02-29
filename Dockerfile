@@ -10,13 +10,16 @@ WORKDIR /app
 # Copy tệp requirements.txt vào thư mục làm việc của container
 COPY requirements.txt /app
 
-# Copy toàn bộ mã nguồn của dự án vào thư mục làm việc của container
-COPY . /app
-
 # Cài đặt các phụ thuộc Python từ tệp requirements.txt
 RUN pip install -r requirements.txt \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
+
+# Cài đặt whitenoise
+RUN pip install whitenoise
+
+# Copy toàn bộ mã nguồn của dự án vào thư mục làm việc của container
+COPY . /app
 
 # Chạy lệnh migrate để áp dụng các thay đổi cơ sở dữ liệu
 RUN python manage.py migrate
