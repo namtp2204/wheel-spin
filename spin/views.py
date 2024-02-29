@@ -35,3 +35,6 @@ def spin_form(request):
 # def navigation(request):
 
 #     return render(request, 'spin/navigation.html')
+# def navigation(request):
+
+#     return render(request, 'spin/navigation.html')
