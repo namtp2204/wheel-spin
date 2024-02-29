@@ -16,7 +16,7 @@ class Command(BaseCommand):
         for _ in range(number_of_codes):
             code = self.generate_spin_code()
             SpinCode.objects.create(code=code)
-            self.stdout.write(self.style.SUCCESS(f'Successfully created spin code: {code}'))
+            self.stdout.write(self.style.SUCCESS(f'{code}'))
 
     def generate_spin_code(self):
         lowercase_letters = string.ascii_lowercase  # Chữ cái viết thường
