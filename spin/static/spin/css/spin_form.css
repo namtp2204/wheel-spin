@@ -12,7 +12,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url('3.jpg') no-repeat;
+    background: url('4.jpg') no-repeat;
     background-size: cover;
     background-position: center;
 }
@@ -28,6 +28,7 @@ body {
 .wrapper h1{
     font-size: 36px;
     text-align: center;
+    margin-bottom: 20px;
 }
 
 .wrapper .input-box{
@@ -109,4 +110,34 @@ body {
  text-decoration: underline;
 }
 
+/* #message */
+.wrapper .messages {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 20px;
+}
 
+.wrapper .messages li {
+    background-color: rgba(255, 0, 0, 0.7); /* Màu nền */
+    color: #fff; /* Màu chữ */
+    padding: 10px 15px; /* Khoảng cách giữa các phần tử */
+    margin-bottom: 10px; /* Khoảng cách giữa các tin nhắn */
+    border-radius: 5px; /* Bo tròn các góc */
+}
+
+.wrapper .messages li.error {
+    background-color: rgba(255, 0, 0, 0.7); /* Màu nền cho tin nhắn lỗi */
+}
+
+.wrapper .messages li.success {
+    background-color: rgba(0, 128, 0, 0.7); /* Màu nền cho tin nhắn thành công */
+}
+
+.wrapper .messages li.warning {
+    background-color: rgba(255, 255, 0, 0.7); /* Màu nền cho tin nhắn cảnh báo */
+}
+.wrapper h1 a {
+    color: #fff; /* Màu trắng */
+    text-decoration: none; /* Bỏ gạch dưới */
+}
