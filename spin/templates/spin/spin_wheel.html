@@ -1,4 +1,4 @@
-{% load static %}
+{% comment %} {% load static %}
 <!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,6 +44,61 @@
                 console.log('gameState:', gameState);
 
             }
+        }
+    </script>
+</body>
+</html> {% endcomment %}
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Spin Wheel</title>
+    <link rel="stylesheet" href="{% static 'spin/css/spin_wheel.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="spinBtn" onmousedown="startSpin('{{ spin_code }}')" onmouseup="stopSpin()">Spin</div>
+        <div class="wheel">
+            <div class="number" style="--i:1;--clr:#db7093;"><span>Voucher 50k</span></div>
+            <div class="number special" style="--i:2;--clr:#20b2aa;"><span>Chúc may mắn lần sau</span></div>
+            <div class="number" style="--i:3;--clr:#d63e92;"><span>Voucher 30k</span></div>
+            <div class="number" style="--i:4;--clr:#daa520;"><span>Freeship</span></div>
+            <div class="number" style="--i:5;--clr:#ff340f;"><span>Voucher 50k</span></div>
+            <div class="number special" style="--i:6;--clr:#ff7f50;"><span>Chúc may mắn lần sau</span></div>
+            <div class="number" style="--i:7;--clr:#3cb371;"><span>Voucher 30k</span></div>
+            <div class="number" style="--i:8;--clr:#4169e1;"><span>Freeship</span></div>
+        </div>
+        <div id="message" style="display: none;">Cảm ơn bạn đã đồng hành cùng Liễu Phạm</div>
+    </div>
+    <script>
+        let wheel = document.querySelector('.wheel');
+        let spinBtn = document.querySelector('.spinBtn');
+        let message = document.getElementById('message'); // Lấy phần tử thông báo
+        let value = Math.ceil(Math.random() * 3600);
+        let spinCode = '{{ spin_code }}'; // Lấy spin_code từ template
+        let gameStateKey = 'gameState_' + spinCode;
+        let gameState = sessionStorage.getItem(gameStateKey) === 'true';
+        console.log('gameState:', gameState);
+
+
+        function startSpin(spinCode) {
+            if (!gameState) { // Nếu trò chơi chưa kết thúc
+                let value = Math.ceil(Math.random() * 3600);
+                wheel.style.transform = "rotate(" + value + "deg)";
+                value += Math.ceil(Math.random() * 3600);
+                gameState = true; // Đặt trạng thái trò chơi thành đã bắt đầu
+                sessionStorage.setItem(gameStateKey, 'true'); // Lưu trạng thái vào sessionStorage
+                spinBtn.style.pointerEvents = 'none'; // Ngăn chặn người dùng quay lại sau khi đã quay
+                document.getElementById("message").style.display = "block";
+                console.log('gameState:', gameState);
+
+            }
+        }
+
+        function stopSpin() {
+            isSpinning = false; // Đặt biến isSpinning thành false khi thả nút
         }
     </script>
 </body>
