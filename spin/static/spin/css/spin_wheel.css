@@ -1,31 +1,27 @@
-/* @import url('http://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap'); */
-*
-{
+/* Reset CSS */
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+/* Font */
+body {
     font-family: 'Poppins', sans-serif;
 }
 
-/* body, .container {
-    overflow: hidden;
-} */
-
+/* Body layout */
 body {
-    overflow: hidden;
-}
-
-
-body
-{
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     background-color: #333;
+    overflow: hidden;
 }
-.container
-{
+
+/* Container layout */
+.container {
     position: relative;
     width: 800px;
     height: 800px;
@@ -33,11 +29,12 @@ body
     justify-content: center;
     align-items: center;
 }
-.container .spinBtn
-{
+
+/* Spin button */
+.container .spinBtn {
     position: absolute;
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     background: #fff;
     border-radius: 50%;
     z-index: 10;
@@ -48,12 +45,12 @@ body
     font-weight: 600;
     color: #333;
     letter-spacing: 0.1em;
-    border: 4px solid rgba(0,0,0,0.75);
+    border: 4px solid rgba(0, 0, 0, 0.75);
     cursor: pointer;
     user-select: none;
 }
-.container .spinBtn::before
-{
+
+.container .spinBtn::before {
     content: '';
     position: absolute;
     top: -28px;
@@ -63,8 +60,8 @@ body
     clip-path: polygon(50% 0%, 15% 100%, 85% 100%);
 }
 
-.container .wheel
-{
+/* Wheel layout */
+.container .wheel {
     position: absolute;
     top: 0;
     left: 0;
@@ -76,8 +73,9 @@ body
     box-shadow: 0 0 0 5px #333, 0 0 0 15px #fff, 0 0 0 18px #111;
     transition: transform 5s ease-in-out;
 }
-.container .wheel .number
-{
+
+/* Number layout */
+.container .wheel .number {
     position: absolute;
     width: 50%;
     height: 50%;
@@ -92,27 +90,21 @@ body
     cursor: pointer;
 }
 
-
-.container .wheel .number span
-{
+/* Number text style */
+.container .wheel .number span {
     position: relative;
     transform: rotate(45deg);
-    font-size: 1em;
+    font-size: 1.5em;
     font-weight: 700;
     color: #fff;
-    text-shadow: 3px 5px 2px rgba(0,0,0,0.15);
-}
-.container .wheel .number.special span
-{
-    padding-left: 50px;
-}
-.container .wheel .number span::after{
-    content: '';
-    position: absolute;
-    font-size: 0.75em;
-    font-weight: 500;
+    text-shadow: 3px 5px 2px rgba(0, 0, 0, 0.15);
 }
 
+.container .wheel .number.special span {
+    padding-left: 50px;
+}
+
+/* Message */
 #message {
     position: absolute;
     top: 50%;
@@ -123,5 +115,11 @@ body
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     z-index: 1000;
-    display: none; /* Ẩn thông báo ban đầu */
+    display: none;
+}
+
+/* Number background image */
+.container .wheel .number span {
+    background-size: cover;
+    background-position: center;
 }
