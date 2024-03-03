@@ -34,6 +34,6 @@ RUN rm -rf /root/.cache
 EXPOSE 8000
 
 # Khởi động máy chủ Django bằng lệnh runserver
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+# CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
 # Khởi động máy chủ Django bằng Gunicorn
-# CMD ["gunicorn", "--bind", "0.0.0.0:8000", "lucky_spin.wsgi:application"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "lucky_spin.wsgi:application"]
