@@ -7,7 +7,7 @@ class Command(BaseCommand):
     help = 'Create spin codes and save them to the database'
 
     def handle(self, *args, **kwargs):
-        number_of_codes = 100  # Số lượng spin codes bạn muốn tạo
+        number_of_codes = 200  # Số lượng spin codes bạn muốn tạo
     
         # Xóa tất cả các spin codes cũ trước khi tạo mới (nếu cần)
         SpinCode.objects.all().delete()
@@ -40,5 +40,5 @@ class Command(BaseCommand):
         random.shuffle(characters)
 
         # Tạo chuỗi ngẫu nhiên có 8 ký tự từ danh sách các ký tự
-        code = ''.join(random.choice(characters) for _ in range(10))
+        code = ''.join(random.choice(characters) for _ in range(8))
         return code
