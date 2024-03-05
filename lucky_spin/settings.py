@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-gm0)zp(+18=cw)csg#nd6kh)=w(dq-3#tt7!w9wkanfr-z3+_c
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = ['node83a.containers.back4app.com','node130a.containers.back4app.com','spin-fl78z2dx.b4a.run','lieuphamauth.click']
+ALLOWED_HOSTS = ['node83a.containers.back4app.com','node130a.containers.back4app.com','spin-fl78z2dx.b4a.run','lieuphamauth.click','https://spin-fl78z2dx.b4a.run']
 
 
 

@@ -32,7 +32,7 @@ RUN rm -rf /root/.cache
 
 # Expose cổng 8000 để có thể truy cập vào ứng dụng Django
 EXPOSE 8000
-
+############################333
 # Khởi động máy chủ Django bằng lệnh runserver
 # CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
 # Khởi động máy chủ Django bằng Gunicorn
